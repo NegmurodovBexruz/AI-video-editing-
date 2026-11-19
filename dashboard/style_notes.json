@@ -1,0 +1,74 @@
+{
+  "talk_ahead": {
+    "order": 1,
+    "title": "Talk Ahead",
+    "def": "Faktlar va raqamlar: har bir fakt grafikaga aylanadi (hisoblagich, xarita, AI kadr)",
+    "fits": "Talking-head explainer: spiker faktlar va raqamlarni tushuntiradi",
+    "look": "Har bir fakt vizualga aylanadi: spiker orqasida matn, hisoblagich, AI insert, real xarita, brend motivli o'tish",
+    "tested": true
+  },
+  "pod_glow": {
+    "order": 2,
+    "title": "Pod Glow",
+    "def": "Podkast va intervyu: ikki qatorli yorqin titr, g'oya kartalari, spiker almashganda oq chaqnash",
+    "fits": "Podkast, intervyu, suhbat",
+    "look": "Ikki qatorli key-phrase titr, bitta yonib turadigan aksent, spiker almashganda oq flash, UI uslubidagi kartalar",
+    "tested": true
+  },
+  "brand_stage": {
+    "order": 3,
+    "title": "Brand Stage",
+    "def": "Brend nomidan: vazmin oq titr, brend rangidagi to'liq ekran sahnalar",
+    "fits": "Bitta spiker brend, studiya yoki agentlik nomidan gapiradi",
+    "look": "Minimal oq titr, to'liq ekranli brend-rang sahnasi, showcase B-roll, brend-mark sting",
+    "tested": false
+  },
+  "case_reel": {
+    "order": 4,
+    "title": "Case Reel",
+    "def": "Case-study reklama: muammo, yechim, natija; raqamlar harakatda",
+    "fits": "Case-study reklama: mijoz uchun erishilgan natija",
+    "look": "Hook → mijoz → muammo → strategiya → natija → CTA shabloni, slot-roll hisoblagich, film-burn o'tish",
+    "tested": false
+  },
+  "spotlight_word": {
+    "order": 5,
+    "title": "Spotlight Word",
+    "def": "Shaxsiy hikoya: bittadan so'z, muhim so'zlar katta va sariq",
+    "fits": "Spiker o'zi, ishi yoki yo'li haqida gapiradigan intro va hikoya",
+    "look": "Bittadan oq so'z, kalit so'z katta sariq glow bilan, tile o'tish, metafora split layout",
+    "tested": false
+  },
+  "in_scene_type": {
+    "order": 6,
+    "title": "In-Scene Type",
+    "def": "Bitta spiker: katta so'zlar kadr ichida, boshning orqasida yoki oldida",
+    "fits": "Bitta spiker, cut-away yo'q",
+    "look": "Kadr ichida qatlamli matn (bosh orqasida yoki oldida), boshga bog'langan blok, zoom pulse, fizik o'tish",
+    "tested": true
+  },
+  "holo_scene": {
+    "order": 7,
+    "title": "Holo Scene",
+    "def": "Joy yoki mahsulot: haqiqiy yuzalarda gologrammalar va bitta CGI sho'ng'ish",
+    "fits": "Spiker haqiqiy joyda brend, mahsulot yoki fakt haqida gapiradi (premium agentlik uslubi)",
+    "look": "Stack titr (kalit so'z bosh orqasida), haqiqiy yuzalarda cyan gologramma, bitta CGI sho'ng'ish, zarrachalardan yig'iladigan ekran",
+    "tested": true
+  },
+  "editorial_showcase": {
+    "order": 8,
+    "title": "Editorial Showcase",
+    "def": "Xizmat yoki portfolio: serif matn, hujjat va misol kartalari",
+    "fits": "Bitta spiker xizmat, mahsulot yoki ishni tushuntirib, misollar va portfolio ko'rsatadi",
+    "look": "Serif va qisqa kursiv/qo'lyozma aksent, xabar va matn kartalari, hujjat sahnalari, pastki demo, uch qatorli namoyish va perspektivali panellar",
+    "tested": false
+  },
+  "ui_cascade": {
+    "order": 9,
+    "title": "UI Cascade",
+    "def": "Ekspert maslahati: harflab yig'iladigan titr, ikonkalar, ilova sahnalari",
+    "fits": "Bitta spiker: ekspert yoki kreator muammo, jarayon va odatlar haqida shijoat bilan gapiradi",
+    "look": "Harflab yig'iladigan stack titr va bitta magenta kalit so'z, 3D romb ikonkalar, shisha kartalar yelpig'ichi, to'liq ekranli ilova sahnalari (to-do, chat), kesimda negativ-flash",
+    "tested": false
+  }
+}

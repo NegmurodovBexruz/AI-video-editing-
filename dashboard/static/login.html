@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kirish · Montaj studiyasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/static/app.css">
+<script>try { var t = localStorage.getItem("ms-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+<body>
+<main class="login">
+  <form class="card" id="f" novalidate>
+    <div class="brand"><span class="mk" aria-hidden="true">M</span><span><b>Montaj studiyasi</b><small>Tizimga kirish</small></span></div>
+    <label><span class="lbl">Login</span><input class="f" id="u" autocomplete="username" required autofocus></label>
+    <label><span class="lbl">Parol</span><input class="f" id="p" type="password" autocomplete="current-password" required></label>
+    <p class="msg" id="m" role="alert"></p>
+    <button type="submit" class="btn pri" id="go">Kirish</button>
+  </form>
+</main>
+<script>
+document.getElementById("f").addEventListener("submit", async function (e) {
+  e.preventDefault();
+  var m = document.getElementById("m"), b = document.getElementById("go");
+  var user = document.getElementById("u").value.trim(), password = document.getElementById("p").value;
+  if (!user || !password) { m.textContent = "Login va parolni kiriting."; m.className = "msg err"; return; }
+  b.disabled = true; m.textContent = ""; m.className = "msg";
+  try {
+    var r = await fetch("/api/login", { method: "POST", headers: { "X-Dash": "1", "Content-Type": "application/json" }, body: JSON.stringify({ user: user, password: password }) });
+    var d = await r.json().catch(function () { return {}; });
+    if (!r.ok) throw new Error(d.error || ("HTTP " + r.status));
+    location.href = "/";
+  } catch (err) { m.textContent = err.message; m.className = "msg err"; b.disabled = false; document.getElementById("p").select(); }
+});
+</script>
+</body>
+</html>

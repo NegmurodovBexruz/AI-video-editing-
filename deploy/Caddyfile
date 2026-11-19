@@ -1,0 +1,21 @@
+{$DOMAIN} {
+	encode gzip
+	# raw videos can be several GB
+	request_body {
+		max_size 10GB
+	}
+	reverse_proxy dashboard:8050 {
+		header_up X-Forwarded-For {remote_host}
+		# agent runs and uploads are long; never cut a streaming video or an upload
+		transport http {
+			read_timeout 0
+			write_timeout 0
+		}
+	}
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy same-origin
+	}
+}

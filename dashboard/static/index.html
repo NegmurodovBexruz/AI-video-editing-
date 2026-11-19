@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Montaj studiyasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/static/app.css">
+<script>try { var t = localStorage.getItem("ms-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+<body>
+<div class="app">
+  <aside class="side" aria-label="Asosiy menyu">
+    <a class="brand" href="#bosh"><span class="mk" aria-hidden="true">M</span><span><b>Montaj studiyasi</b><small>Agentlik paneli</small></span></a>
+    <div class="cosw" id="cosw"></div>
+    <nav class="navgrp" aria-label="Asosiy">
+      <span>Asosiy</span>
+      <a href="#bosh" data-nav="bosh"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Bosh sahifa</a>
+      <a href="#videolar" data-nav="videolar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 10l4-2v8l-4-2"/></svg>Videolar<span class="cnt" id="cntV"></span></a>
+    </nav>
+    <nav class="navgrp" aria-label="Uslublar">
+      <span>Uslublar</span>
+      <a href="#uslublar" data-nav="uslublar"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Uslublar katalogi<span class="cnt" id="cntS"></span></a>
+      <a href="#uslub-yarat" data-nav="uslub-yarat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>Uslub yaratish</a>
+    </nav>
+    <div class="sidefoot" id="sidefoot" aria-live="polite"></div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="gut topin">
+        <div><div class="crumb" id="crumb"></div><h1 class="ptitle" id="ptitle">Montaj studiyasi</h1></div>
+        <div class="tools">
+          <label class="search"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Video yoki uslub qidirish" aria-label="Qidirish"></label>
+          <a class="btn pri" href="#yangi">+ Yangi video</a>
+          <button type="button" class="btn icon" id="theme" aria-label="Yorug' yoki qorong'i mavzu"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+        </div>
+      </div>
+    </header>
+    <main class="gut content" id="view"></main>
+  </div>
+</div>
+<dialog id="pwDlg" class="pwdlg" aria-labelledby="pwT">
+  <form id="pwForm" novalidate>
+    <h2 id="pwT">Parolni o'zgartirish</h2>
+    <label><span class="lbl">Joriy parol</span><input class="f" id="pwOld" type="password" autocomplete="current-password" required></label>
+    <label><span class="lbl">Yangi parol (kamida 8 belgi)</span><input class="f" id="pwNew" type="password" autocomplete="new-password" minlength="8" required></label>
+    <label><span class="lbl">Yangi parol yana bir marta</span><input class="f" id="pwNew2" type="password" autocomplete="new-password" minlength="8" required></label>
+    <p class="note msg" id="pwMsg" role="status"></p>
+    <div class="tools" style="justify-content:flex-end"><button type="button" class="btn" id="pwClose">Bekor</button><button type="submit" class="btn pri">Saqlash</button></div>
+  </form>
+</dialog>
+<script src="/static/app.js"></script>
+</body>
+</html>

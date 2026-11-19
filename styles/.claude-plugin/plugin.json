@@ -1,0 +1,8 @@
+{
+  "name": "styles",
+  "displayName": "Editing Styles",
+  "version": "0.4.0",
+  "description": "Nine tool-independent editing styles for real footage, one skill each: talk_ahead (talking-head explainer, every fact becomes a visual), pod_glow (podcast / interview clips), brand_stage (presenter speaking for a brand, studio or agency), case_reel (case-study ad story template), spotlight_word (talking-head intros and stories, one word at a time with yellow spotlight words), in_scene_type (single presenter, layered type inside the shot, no cut-aways), holo_scene (presenter in a real place, cyan holograms and a CGI dive), editorial_showcase (editorial explanation with type and document scenes, lower-screen demos and three-row portfolio showcases), ui_cascade (letter-by-letter caption stacks with one glowing accent word, 3D icon tiles, glass card fans, full-screen app scenes and negative-flash cuts).",
+  "author": {"name": "AP-1077 editing team"},
+  "keywords": ["video-editing", "style", "talking-head", "podcast", "interview", "brand", "case-study", "captions", "kinetic-typography", "reels", "ui"]
+}

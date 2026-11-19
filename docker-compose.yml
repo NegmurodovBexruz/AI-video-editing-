@@ -1,0 +1,44 @@
+# Montaj studiyasi: docker compose up -d   (settings in .env, see .env.example; guide: DEPLOY.md)
+services:
+  dashboard:
+    build: .
+    image: montaj-studiyasi:latest
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DASH_CLAUDE_AUTH: api
+      DASH_ALLOWED_HOSTS: ${DOMAIN:-localhost}
+      DASH_COOKIE_SECURE: ${COOKIE_SECURE:-1}
+    volumes:
+      - data:/data                 # jobs, companies, login data, custom styles, whisper model cache
+      - claude_home:/home/app      # Higgsfield MCP/OAuth + agent transcripts (survive rebuilds)
+    expose:
+      - "8050"
+    # Only for a first local test without HTTPS: uncomment, and set COOKIE_SECURE=0 in .env
+    # ports:
+    #   - "127.0.0.1:8050:8050"
+    deploy:
+      resources:
+        limits:
+          memory: ${MEM_LIMIT:-12g}
+
+  # HTTPS in front (Let's Encrypt, automatic). Needs DOMAIN pointing at this server, ports 80/443 open.
+  caddy:
+    image: caddy:2.10-alpine
+    restart: unless-stopped
+    depends_on: [dashboard]
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  data:
+  claude_home:
+  caddy_data:
+  caddy_config:

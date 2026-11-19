@@ -1,0 +1,43 @@
+# Build context = code + fonts + model only. Secrets, jobs and media never go into the image.
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+.claude/
+.claude.json
+release/
+
+# job data and old experiments (the server keeps its own on the /data volume)
+projects/
+work/
+out/
+gen/
+refs/
+!refs/ref_ba_20261109/analysis.md
+cues*.json
+
+# media anywhere
+**/*.mp4
+**/*.mov
+**/*.mkv
+**/*.webm
+**/*.wav
+**/*.mp3
+**/*.m4a
+**/*.aac
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.webp
+**/*.gif
+
+# runtime / dev leftovers
+**/__pycache__
+**/*.pyc
+**/*.log
+**/*.lock
+**/node_modules
+**/.venv
+dashboard/_codex_version_20261106/
+dashboard/design/
