@@ -4,7 +4,51 @@ Marketing agentliklari va kontent jamoalari uchun o'zbekcha AI video montaj dash
 
 **Loyiha:** AP-1077 — agentic team for editing. **Holat:** faol ishlab chiqilmoqda. Windows'da real montajlar bajarilgan; Linux/Docker uchun deploy konfiguratsiyasi mavjud. Serverdagi haqiqiy API/OAuth bilan to'liq montaj va AE bilan to'liq montaj alohida tekshiruvni talab qiladi.
 
-[Ishga tushirish](#ishga-tushirish) · [Arxitektura](#arxitektura) · [Uslublar](#montaj-uslublari) · [Testlar](#testlar) · [Server qo'llanmasi](DEPLOY.md) · [Handoff](HANDOFF.md)
+[Skrinshotlar](#interfeysdan-lavhalar) · [Ishga tushirish](#ishga-tushirish) · [Arxitektura](#arxitektura) · [Uslublar](#montaj-uslublari) · [Testlar](#testlar) · [Server qo'llanmasi](DEPLOY.md) · [Handoff](HANDOFF.md)
+
+![Montaj studiyasi bosh sahifasi: tayyor videolar, versiyalar, QA natijalari va xarajatlar](docs/images/dashboard-overview.png)
+
+*Bir panelda: ishlar holati, tayyor videolar, versiyalar, sifat natijalari va sarf.*
+
+## Interfeysdan lavhalar
+
+Quyidagi skrinshotlar **2026-11-19** kuni joriy loyiha lokal ochilib, saqlangan haqiqiy ishlar bilan olingan. Yon paneldagi akkaunt balansi berkitilgan. Ko'rsatilgan natijalar shu ishlarga tegishli; yangi clone o'z ma'lumotlari bilan boshlanadi.
+
+<details>
+<summary><strong>1. Video topshirish — materiallar, format va uslub</strong></summary>
+
+Raw videolar, rasm, logo va qo'shimcha materiallarni bir joydan yuklang. To'rtta formatdan birini tanlang; o'ngdagi xulosa tanlangan sozlamalar va Higgsfield limitini ko'rsatadi.
+
+![Yangi video formasi: yuklash maydoni, 9:16, 4:5, 1:1 va 16:9 formatlari, avtomatik uslub va xulosa](docs/images/new-edit.png)
+
+</details>
+
+<details>
+<summary><strong>2. Uslublar katalogi — 9 xil vizual yo'nalish</strong></summary>
+
+Talk Ahead, Pod Glow, UI Cascade va boshqa uslublarning ko'rinishi hamda qo'llanishini solishtiring. Katalogdan uslub tanlash yoki referenslardan yangi uslub yaratish mumkin.
+
+![To'qqizta uslub kartasi: Talk Ahead, Pod Glow, Brand Stage, Case Reel, Spotlight Word, In-Scene Type, Holo Scene, Editorial Showcase va UI Cascade](docs/images/style-catalogue.png)
+
+</details>
+
+<details>
+<summary><strong>3. Tayyor natija — video, versiyalar va vaqtli hisobot</strong></summary>
+
+Haqiqiy **UI Cascade** montajidan kadr: **v1 → v2 → v3** versiyalari, yuklab olish tugmasi va vaqt belgilari bilan “Nima qilindi” ro'yxati. Hisobotdagi vaqtni bosib, videoning o'sha joyiga o'tish mumkin.
+
+![Tayyor vertikal video, uchta versiya va montajdagi o'zgarishlarning vaqtli hisoboti](docs/images/edit-result.png)
+
+</details>
+
+<details>
+<summary><strong>4. Sifat tekshiruvi — natijaning texnik hisoboti</strong></summary>
+
+Shu ishning joriy versiyasi **17/17** tekshiruvdan o'tgan. Panel format, ovoz, qora yoki qotgan kadrlar, titr sinxroni, matn joylashuvi va dizayn izchilligini ko'rsatadi.
+
+<img src="docs/images/quality-checks.png" alt="Tekshiruv paneli: 17 ta tekshiruv o'tgan, jumladan 1080×1920, 30 fps, −14.1 LUFS va titr sinxroni" width="640">
+
+</details>
 
 ## Imkoniyatlar
 
@@ -228,6 +272,7 @@ engine/               Tahlil, render, ovoz, QA va reference tahlili
 styles/               Claude Code plagini, 9 uslub va reference qoidalari
 ae_mcp/               Windows After Effects MCP serveri va JSX yordamchilari
 deploy/               Docker entrypoint, Caddy, ulanish/paketlash skriptlari
+docs/images/          README uchun lokal interfeys skrinshotlari
 assets/               Eski compositorlar uchun shriftlar
 models/               RVM ONNX modeli
 refs/                 Style yaratish uchun matnli reference namunasi
@@ -290,7 +335,7 @@ Sun'iy test media yaratish va Docker ichida sinash buyruqlari [DEPLOY.md](DEPLOY
 python -I -B deploy/package_release.py
 ```
 
-`release/AP-1077-montaj-server-YYYYMMDD.zip` yaratiladi. ZIP'dagi `PACKAGE_MANIFEST.json` fayllar va SHA-256 xeshlarini beradi. Paket **joriy diskdagi koddan** tuziladi; commit qilinmagan o'zgarishlarni ham oladi. Credential'lar, lokal ishlar va media kiritilmaydi. Mavjud shu kundagi ZIP ustiga yozilmaydi.
+`release/AP-1077-montaj-server-YYYYMMDD.zip` yaratiladi. ZIP'dagi `PACKAGE_MANIFEST.json` fayllar va SHA-256 xeshlarini beradi. Paket **joriy diskdagi koddan** tuziladi; commit qilinmagan o'zgarishlarni ham oladi. README skrinshotlari ham kiradi. Credential'lar, lokal ish papkalari va asl video/audio fayllar kiritilmaydi. Mavjud shu kundagi ZIP ustiga yozilmaydi.
 
 ## Ma'lum cheklovlar va keyingi ishlar
 

@@ -34,6 +34,8 @@ def payload():
             if p.suffix.lower() in SUFFIXES and p.name != ".claude.json" and not p.name.startswith(".env"):
                 paths.add(p)
     paths.update((ROOT / "assets").glob("*.ttf"))
+    # Curated README screenshots; local job media remains excluded.
+    paths.update((ROOT / "docs/images").glob("*.png"))
     paths.add(ROOT / MODEL)
     paths.add(ROOT / "refs/ref_ba_20261109/analysis.md")
     result = {}

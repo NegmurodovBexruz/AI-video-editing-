@@ -24,6 +24,9 @@ upload_*.ps1
 *.aac
 *.flac
 
+# Curated documentation screenshots.
+!/docs/images/*.png
+
 # models / archives / heavy data
 *.onnx
 !/models/rvm_mobilenetv3_fp32.onnx
