@@ -12,43 +12,108 @@ Marketing agentliklari va kontent jamoalari uchun o'zbekcha AI video montaj dash
 
 ## Interfeysdan lavhalar
 
-Quyidagi skrinshotlar **2026-11-19** kuni joriy loyiha lokal ochilib, saqlangan haqiqiy ishlar bilan olingan. Yon paneldagi akkaunt balansi berkitilgan. Ko'rsatilgan natijalar shu ishlarga tegishli; yangi clone o'z ma'lumotlari bilan boshlanadi.
+**Material → format va uslub → limit → brief → montaj → tekshiruv → tuzatish.** Quyida har bir bosqichning yaqin ko'rinishi va undagi boshqaruvlar tushuntirilgan.
 
-<details>
-<summary><strong>1. Video topshirish — materiallar, format va uslub</strong></summary>
+[Materiallar](#1-materiallarni-topshirish) · [Format](#2-format-va-avtomatik-uslub) · [Byudjet](#3-montaj-byudjeti) · [Brief](#4-istaklar-va-referenslar) · [Katalog](#5-uslublar-katalogi) · [Natija](#6-tayyor-video-va-versiyalar) · [Hisobot](#7-vaqt-belgilari-bilan-montaj-hisoboti) · [QA](#8-sifat-tekshiruvi) · [Feedback](#9-vaqtga-boglangan-tuzatish)
 
-Raw videolar, rasm, logo va qo'shimcha materiallarni bir joydan yuklang. To'rtta formatdan birini tanlang; o'ngdagi xulosa tanlangan sozlamalar va Higgsfield limitini ko'rsatadi.
+Rasmlar **2026-11-19** kuni lokal interfeysdan olingan. Natija va hisobotlar saqlangan haqiqiy ishga tegishli. `$5` limiti, brief va feedback matnlari ko'rsatma uchun kiritilgan, yuborilmagan. Bosh sahifadagi akkaunt balansi berkitilgan. Rasmlarni bosib, to'liq o'lchamda ochish mumkin.
 
-![Yangi video formasi: yuklash maydoni, 9:16, 4:5, 1:1 va 16:9 formatlari, avtomatik uslub va xulosa](docs/images/new-edit.png)
+### 1. Materiallarni topshirish
 
-</details>
+**“Yangi video”** sahifasida asosiy video va montajga qo'shiladigan materiallar alohida maydonlarga beriladi.
 
-<details>
-<summary><strong>2. Uslublar katalogi — 9 xil vizual yo'nalish</strong></summary>
+![Kompaniya tanlash, bir nechta raw video yuklash, qo'shimcha rasm yoki logo biriktirish va ish nomini yozish maydonlari](docs/images/new-edit.png)
 
-Talk Ahead, Pod Glow, UI Cascade va boshqa uslublarning ko'rinishi hamda qo'llanishini solishtiring. Katalogdan uslub tanlash yoki referenslardan yangi uslub yaratish mumkin.
+- **Kompaniya:** ishlarni mijoz yoki jamoa bo'yicha guruhlash; “Kompaniyasiz” ham mumkin.
+- **Video:** bitta yoki bir nechta raw faylni tashlash yoxud bosib tanlash. Qisqa tomon kamida 720 px bo'lishi kerak.
+- **Qo'shimcha materiallar:** logo, mahsulot rasmi, B-roll va boshqa video. Fayl tanlangach, unga izoh va majburiy foydalanish belgisi qo'yish mumkin.
+- **Nomi:** ro'yxatda tez topish uchun tushunarli ish nomi.
 
-![To'qqizta uslub kartasi: Talk Ahead, Pod Glow, Brand Stage, Case Reel, Spotlight Word, In-Scene Type, Holo Scene, Editorial Showcase va UI Cascade](docs/images/style-catalogue.png)
+### 2. Format va avtomatik uslub
 
-</details>
+Format kartasi chiqadigan videoning nisbatini ham, o'lchamini ham belgilaydi. Rasmda **9:16 — 1080×1920** tanlangan.
 
-<details>
-<summary><strong>3. Tayyor natija — video, versiyalar va vaqtli hisobot</strong></summary>
+![To'rtta format kartasi va avtomatik uslub tanlovi yaqindan: 9:16, 4:5, 1:1 va 16:9](docs/images/format-style.png)
 
-Haqiqiy **UI Cascade** montajidan kadr: **v1 → v2 → v3** versiyalari, yuklab olish tugmasi va vaqt belgilari bilan “Nima qilindi” ro'yxati. Hisobotdagi vaqtni bosib, videoning o'sha joyiga o'tish mumkin.
+**Avtomatik** tanlovda agent raw video, referens va istaklarga qarab uslub tanlaydi. Aniq vizual yo'nalish kerak bo'lsa, **“Uslubni o'zgartirish”** orqali katalogdagi variantni belgilang. Formatlarning qo'llanishi har bir kartaning o'zida yozilgan.
 
-![Tayyor vertikal video, uchta versiya va montajdagi o'zgarishlarning vaqtli hisoboti](docs/images/edit-result.png)
+### 3. Montaj byudjeti
 
-</details>
+**Minimal**, **Standart** yoki **Boy** darajasi montaj imkoniyatlari va Higgsfield kredit chegarasini birga belgilaydi. Mustaqil dollar limiti ham berish mumkin.
 
-<details>
-<summary><strong>4. Sifat tekshiruvi — natijaning texnik hisoboti</strong></summary>
+![Montaj darajalari va qo'lda kiritilgan 5 dollar: interfeys 90 kredit hisoblab, daraja tanlanmaganini ko'rsatmoqda](docs/images/budget-limit.png)
 
-Shu ishning joriy versiyasi **17/17** tekshiruvdan o'tgan. Panel format, ovoz, qora yoki qotgan kadrlar, titr sinxroni, matn joylashuvi va dizayn izchilligini ko'rsatadi.
+Rasmdagi misol: **`$5 × 18 = 90 kredit`**. Dollar yozilganda daraja tanlovi tozalanadi; “Boy” darajasining 60 kredit chegarasi bu limitni kesmaydi. Pastdagi xabar hisoblangan limitni darhol ko'rsatadi. **Claude xarajati alohida.** Hisoblash qoidalari: [Format va xarajat](#format-va-xarajat).
 
-<img src="docs/images/quality-checks.png" alt="Tekshiruv paneli: 17 ta tekshiruv o'tgan, jumladan 1080×1920, 30 fps, −14.1 LUFS va titr sinxroni" width="640">
+### 4. Istaklar va referenslar
 
-</details>
+Brief'da natijaning ko'rinishi va kerakli cheklovlarni yozing: til, rang, titr, o'tishlar, logo va ovoz bo'yicha aniq istaklar.
+
+![Istaklar maydonida o'zbekcha brief namunasi, matnli hujjat va referens video biriktirish maydonlari](docs/images/edit-brief.png)
+
+- **Istaklar:** rasmda yashil urg'u rangi, o'zbekcha titr, sokin o'tish va aniq ovoz so'ralgan.
+- **Fayllar:** batafsil brief yoki brend ko'rsatmalarini `.md` / `.txt` orqali berish.
+- **Yoqqan videolar:** referenslar qo'shish. Referens tanlangach, unda aynan nima yoqqanini yozadigan qo'shimcha maydon ochiladi.
+
+### 5. Uslublar katalogi
+
+Har bir kartada uslubning vizual namunasi, nimaga mosligi, ishlatilgan videolar soni va **“Tanlash”** tugmasi bor. Filtrlar umumiy hamda agentlik uslublarini ajratadi.
+
+![Uslublar katalogi yaqindan: barcha to'qqiz uslubning namunalari, izohlari va tanlash tugmalari](docs/images/style-catalogue.png)
+
+Masalan, **Talk Ahead** fakt va raqamlarga, **Pod Glow** podkastga, **UI Cascade** ekspert maslahati va ilova ko'rinishidagi sahnalarga mos. **“Uslub yaratish”** orqali kamida ikki referens asosida yangi yo'nalish yaratish mumkin. To'liq tavsiflar: [Montaj uslublari](#montaj-uslublari).
+
+### 6. Tayyor video va versiyalar
+
+Quyida haqiqiy **UI Cascade** montajining uchinchi versiyasi. Videodagi titr va “Keling” grafikasi tayyor natijaning o'zidan ko'rinmoqda.
+
+<a href="docs/images/edit-result.png"><img src="docs/images/edit-result.png" alt="Tayyor video yaqindan: UI Cascade, 9:16, QA 17/17, v1-v3 versiyalari va yuklab olish tugmasi" width="640"></a>
+
+| Boshqaruv | Nima ko'rsatadi yoki bajaradi |
+|---|---|
+| `Tayyor`, `Tuzatish 2` | Ish holati va bajarilgan tuzatish raqami |
+| `UI Cascade · Boy · 9:16` | Shu ishning uslubi, darajasi va formati |
+| `QA 17/17` | Joriy natijaning sifat tekshiruvi xulosasi |
+| `v1`, `v2`, `v3` | Oldingi yoki joriy videoni ochish; rasmda `v3` tanlangan |
+| Video pleyeri | Ko'rish, to'xtatish va kerakli vaqtga o'tish |
+| `v3 ni yuklab olish` | Tanlangan versiyani fayl sifatida olish |
+
+### 7. Vaqt belgilari bilan montaj hisoboti
+
+**“Nima qilindi”** paneli montaj qarorlarini videodagi vaqt va aytilgan gap bilan bog'laydi. Har bir qatorni bosish pleyerni tegishli joydan ishga tushiradi.
+
+<a href="docs/images/edit-timeline.png"><img src="docs/images/edit-timeline.png" alt="Nima qilindi paneli to'liq: 0:00 dagi titrdan 1:08 dagi yakungacha o'nta hodisa va umumiy montaj izohi" width="640"></a>
+
+Bu misolda **0:03** da “Keling” tugmasi, **0:30** da qadamli ilova sahnasi, **1:07** da AI video lavha qayd etilgan. Pastdagi umumiy izoh butun video bo'ylab ishlatilgan titr, rang, o'tish, musiqa va ovoz yechimini tushuntiradi.
+
+### 8. Sifat tekshiruvi
+
+**“Tekshiruv”** paneli texnik QA natijasini bandma-band ochadi. Shu ishning joriy versiyasi **17/17** tekshiruvdan o'tgan.
+
+<a href="docs/images/quality-checks.png"><img src="docs/images/quality-checks.png" alt="17 ta sifat tekshiruvi to'liq: format, ovoz, jonli yakun, qora va qotgan kadrlar, titr sinxroni, platforma zonalari va dizayn" width="640"></a>
+
+| Tekshiruv guruhi | Rasmdagi dalil |
+|---|---|
+| Video va audio | 1080×1920, 30 fps, H.264 + AAC; −14.1 LUFS, true peak −1.2 dBTP |
+| Kadrlar | Qora kadr yo'q, 3 soniyadan uzun qotish yo'q, yakun jonli |
+| Titr | So'zlar tovushga mos; juda qisqa yoki kadrdan chiqib ketgan matn yo'q |
+| Joylashuv | Matn platforma tugmalari va izoh zonasiga tushmagan |
+| Dizayn va hisobot | Titr/karta/grafika izchilligi, g'oyalar va hisobot mosligi |
+
+### 9. Vaqtga bog'langan tuzatish
+
+Natijani ko'rayotib kerakli kadrda to'xtating. **“Vaqtni qo'shish”** tugmasi o'sha vaqtni feedback maydoniga kiritadi; keyin aynan nima o'zgarishini yozing.
+
+![Feedback formasi yaqindan: 0:04.0 vaqt belgisi, kalit so'zni kattalashtirish misoli, fayl biriktirish, limit va yuborish tugmasi](docs/images/edit-feedback.png)
+
+1. Videoda tuzatish kerak bo'lgan joyni toping va vaqt belgisini qo'shing.
+2. So'rovni aniq yozing. Rasmda kalit so'zni kattalashtirib, yashil rangni saqlash so'ralgan.
+3. Zarur bo'lsa rasm, video, hujjat yoki musiqa biriktiring; pastda tuzatish limiti ko'rinadi.
+4. **“Yuborish”** tuzatishni boshlaydi. Oldingi natija versiya sifatida saqlanadi.
+
+*Rasmdagi feedback — yuborilmagan namuna.*
+
+[↑ Qo'llanma boshiga](#interfeysdan-lavhalar) · [Lokal ishga tushirish →](#ishga-tushirish)
 
 ## Imkoniyatlar
 
